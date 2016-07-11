@@ -6,7 +6,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import com.pgs.soft.service.CurrentUserDetailsService;
+import org.springframework.security.core.userdetails.UserDetailsService;
+
 import com.pgs.soft.service.CustomAuthenticationSuccessHandler;
 import com.pgs.soft.service.CustomLogoutSuccessHandler;
 
@@ -14,8 +15,8 @@ import com.pgs.soft.service.CustomLogoutSuccessHandler;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	
-	private CurrentUserDetailsService userDetailsService;
+	@Autowired
+	private UserDetailsService userDetailsService;
 	
 	@Autowired
 	private CustomAuthenticationSuccessHandler authenticationSuccessHandler;
@@ -38,7 +39,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.logout()
 				.logoutUrl("/logout")
 				.logoutSuccessHandler(logoutSuccessHandler)
-				.permitAll();							
+				.permitAll()
+			.and()
+				.csrf().disable();							
 							
 	}
 	
