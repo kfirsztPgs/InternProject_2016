@@ -36,6 +36,6 @@ public class UserController {
 	@RequestMapping(value = "/user", method=RequestMethod.POST)
 	public String register(@Valid @RequestBody UserDTO userDTO){
 		userService.register(userDTO);
-		return "zar";
+		return "Registered.";
 	}
 }
