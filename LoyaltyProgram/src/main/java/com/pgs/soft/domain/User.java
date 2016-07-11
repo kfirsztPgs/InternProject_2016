@@ -24,8 +24,8 @@ public class User implements UserDetails {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "idUser")
-	private Integer idUser;
+	@Column(name = "id")
+	private Integer id;
 	
 	private String email;
 	private String password;
@@ -56,7 +56,7 @@ public class User implements UserDetails {
 		this.password = password;
 	}
 	public Integer getIdUser() {
-		return idUser;
+		return id;
 	}
 
 	public String getRole() {
