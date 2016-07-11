@@ -6,8 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class User {
+
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -17,14 +19,15 @@ public class User {
 	private String email;
 	private String password;
 	
+	private Role role;
+	
 		
 	public User() {
 		super();
 	}
-	
-		
+			
 	public User(String email, String password) {
-		super();
+		
 		this.email = email;
 		this.password = password;
 	}
@@ -43,6 +46,14 @@ public class User {
 	}
 	public Integer getIdUser() {
 		return idUser;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
 	}
 	
 	

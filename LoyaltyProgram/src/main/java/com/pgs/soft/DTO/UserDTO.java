@@ -7,6 +7,12 @@ public class UserDTO {
 	private String email;
 	private String password;
 	
+	
+	
+	public UserDTO() {
+		super();
+	}
+
 	public UserDTO(Integer idUser, String email, String password) {
 		super();
 		this.idUser = idUser;

@@ -16,7 +16,7 @@ public class CustomLogoutSuccessHandler implements LogoutSuccessHandler {
 	@Override
 	public void onLogoutSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication)
 			throws IOException, ServletException {
-		// TODO Auto-generated method stub
+		
 		
 	}
 	
